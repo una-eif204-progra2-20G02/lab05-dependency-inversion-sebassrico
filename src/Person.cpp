@@ -38,18 +38,19 @@ std::string Person::toString() const {
     return getFirstName() + " " + getLastName() + "\nDoc Id: " + std::to_string(getDocumentId());
 }
 
-std::string Person::processPayment(ISender* x) {
+std::string Person::processPayment(ISender* paymentMethod) {
     MoneySender* moneySender=new MoneySender;
-if(x=dynamic_cast<BankTransferSender*>(x)){
-return moneySender->Sender(dynamic_cast<BankTransferSender*>(x));
+
+if(paymentMethod==dynamic_cast<BankTransferSender*>(paymentMethod)){
+return moneySender->Sender(dynamic_cast<BankTransferSender*>(paymentMethod));
 }
 else
-if(x=dynamic_cast<CheckSender*>(x)){
-   return moneySender->Sender(dynamic_cast<CheckSender*>(x));
+if(paymentMethod==dynamic_cast<CheckSender*>(paymentMethod)){
+   return moneySender->Sender(dynamic_cast<CheckSender*>(paymentMethod));
 }
 else
-if(x=dynamic_cast<CashSender*>(x)){
-   return moneySender->Sender(dynamic_cast<CashSender*>(x));
+if(paymentMethod==dynamic_cast<CashSender*>(paymentMethod)){
+   return moneySender->Sender(dynamic_cast<CashSender*>(paymentMethod));
 }
 else
     return "ERROR";
