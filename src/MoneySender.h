@@ -8,7 +8,10 @@
 #define MY_PROJECT_NAME_SENDMONEY_H
 using namespace std;
 class MoneySender: public BankTransferSender, public CashSender, public CheckSender{
-    string sendPayment();
+public:
+    string Sender(BankTransferSender* x);
+   string Sender(CashSender* x);
+    string Sender(CheckSender* x);
 
 
 };

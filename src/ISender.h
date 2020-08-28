@@ -2,12 +2,13 @@
 // Created by Sebastian on 8/28/2020.
 //
 #include <iostream>
-
+#include <sstream>
 #ifndef MY_PROJECT_NAME_ISENDER_H
 #define MY_PROJECT_NAME_ISENDER_H
 using namespace std;
 class ISender{
-    virtual string sendPayment()=0;
+public:
+    virtual string sendPayment();
 
 };
 #endif //MY_PROJECT_NAME_ISENDER_H
