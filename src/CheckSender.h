@@ -4,12 +4,12 @@
 
 #ifndef LAB05_DEPENDENCY_INVERSION_SOLUTION_CHECKSENDER_H
 #define LAB05_DEPENDENCY_INVERSION_SOLUTION_CHECKSENDER_H
-
+#include "ISender.h"
 #include <string>
 
-class CheckSender{
+class CheckSender: public ISender{
 public:
-    std::string sendPayment() const;
+    string sendPayment() override;
 };
 
 
